@@ -56,6 +56,12 @@
     --radius-full: 100px;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
 html {
     scroll-behavior: smooth;
     font-size: 16px;
@@ -72,10 +78,14 @@ body {
     overflow-x: hidden;
     width: 100%;
     position: relative;
+    min-height: 100vh;
 }
 
 /* Garante que nenhum filho quebre o layout */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     max-width: 100%;
 }
 
@@ -91,6 +101,19 @@ img, video, iframe {
     padding: 0 clamp(1rem, 4vw, 2rem);
 }
 
+section,
+    .container,
+    .navbar,
+    .hero,
+    .about,
+    .services,
+    .testimonials,
+    .contact,
+    .footer {
+        width: 100%;
+        max-width: 100%;
+}
+
 /* ==========================================
    NAVIGATION
    ========================================== */
@@ -98,8 +121,8 @@ img, video, iframe {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
     width: 100%;
+    max-width: 100%;
     background: var(--white);
     box-shadow: 0 2px 20px rgba(11, 31, 75, 0.1);
     z-index: 1000;
@@ -1443,6 +1466,27 @@ section {
         display: flex;
     }
 
+    .services-grid,
+    .testimonials-grid,
+    .hero-stats {
+        width: 100%;
+    }
+    
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    * {
+        max-width: 100%;
+    }
+
+    img, video, iframe {
+        max-width: 100%;
+        height: auto;
+    }
+    
     .nav-menu {
         position: fixed;
         top: 0;
